@@ -50,6 +50,18 @@ func IsSurname(s string) (float32, bool) {
 	return occurance, found
 }
 
+func IsFirstName(s string) bool {
+	if _, found := IsFemale(s); found {
+		return true
+	}
+
+	if _, found := IsMale(s); found {
+		return true
+	}
+
+	return false
+}
+
 func normalize(s string) string {
 	s = strings.TrimSpace(s)
 	s = strings.ToUpper(s)
