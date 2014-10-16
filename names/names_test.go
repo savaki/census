@@ -57,4 +57,16 @@ func TestIsX(t *testing.T) {
 			So(freq, ShouldBeGreaterThan, 0.0)
 		})
 	})
+
+	Convey("When I call IsSurname with a low freq Surname", t, func() {
+		freq, ok := IsSurname("AALDERINK")
+
+		Convey("Then I expect it to be found", func() {
+			So(ok, ShouldBeTrue)
+		})
+
+		Convey("And I expect a freq above 0", func() {
+			So(freq, ShouldEqual, 0.0)
+		})
+	})
 }
